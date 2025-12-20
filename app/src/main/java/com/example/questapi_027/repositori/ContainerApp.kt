@@ -9,34 +9,31 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
-interface ContainerApp {
+interface ContainerApp{
     val repositoryDataSiswa: RepositoryDataSiswa
 }
 
 class DefaultContainerApp : ContainerApp {
-
-    private val baseUrl = "http://10.0.2.2/umyTI/"
+    private val baseurl = "http://10.0.2.2/umyTI/"
 
     val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
     val klien = OkHttpClient.Builder()
-        .addInterceptor(interceptor = logging)
+        .addInterceptor(logging)
         .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl(baseUrl)
+        .baseUrl(baseurl)
         .addConverterFactory(
             Json {
                 ignoreUnknownKeys = true
                 prettyPrint = true
                 isLenient = true
-            }.asConverterFactory(
-                contentType = "application/json".toMediaType()
-            )
+            }.asConverterFactory("application/json".toMediaType())
         )
-        .client(  klien)
+        .client(klien)
         .build()
 
     private val retrofitService: ServiceApiSiswa by lazy {
@@ -44,15 +41,14 @@ class DefaultContainerApp : ContainerApp {
     }
 
     override val repositoryDataSiswa: RepositoryDataSiswa by lazy {
-        JaringanRepositoryDataSiswa(serviceApiSiswa = retrofitService)
+        JaringanRepositoryDataSiswa(retrofitService)
     }
 }
 
 class AplikasiDataSiswa : Application() {
-    lateinit var container: ContainerApp
-
+    lateinit var containerApp: ContainerApp // Perubahan nama dari 'container' ke 'containerApp'
     override fun onCreate() {
         super.onCreate()
-        this.container = DefaultContainerApp()
+        containerApp = DefaultContainerApp()
     }
 }
