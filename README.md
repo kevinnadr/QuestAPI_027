@@ -7,4 +7,8 @@
 3. TAMPILAN DI DATABASE(PHPMYADMIN)
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d762beec-9e7d-47f8-abb2-236c6edade2c" />
 
+4. TAMPILAN DI HALAMAN DETAIL
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f2cd5303-255f-44f4-82f8-bbe64fbe8b0e" />
+
+
 
