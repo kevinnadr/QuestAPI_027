@@ -27,7 +27,7 @@ class JaringanRepositoryDataSiswa(
 
 
 
-    override suspend fun getSatuSiswa(id: Int): DataSiswa = serviceApiSiswa.getSatuSiswa(id)
+    override suspend fun getSatuSiswa(id: Int): DataSiswa = serviceApiSiswa.getSatuSiswa(id)[0]
 
     override suspend fun editSatuSiswa(id: Int, dataSiswa: DataSiswa): retrofit2.Response<Void> =serviceApiSiswa.postSiswa(dataSiswa)
 
