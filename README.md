@@ -10,5 +10,9 @@
 4. TAMPILAN DI HALAMAN DETAIL
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f2cd5303-255f-44f4-82f8-bbe64fbe8b0e" />
 
+5. TAMPILAN DI HALAMAN EDIT
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c43bccaf-3363-4612-8c72-8c27c1b6d919" />
+
+
 
 
